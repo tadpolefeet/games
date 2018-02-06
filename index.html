@@ -26,7 +26,51 @@
   </p>
   
   <p>
-    2, 38, 52, 9, 92, 53, 10, 72, 3, 58, 16, 86, 89, 64, 75, 12, 99, 57, 61, 5, 81, 13, 4, 21, 40, 6, 65, 43, 84, 94, 82, 98, 85, 18, 30, 63, 19, 55, 49, 96, 97, 29, 74, 45, 1, 36, 27, 15, 25, 71, 88, 44, 62, 34, 33, 73, 31, 78, 93, 20, 22, 14, 32, 35, 23, 28, 24, 26, 42, 50, 90, 8, 77, 67, 51, 59, 87, 41, 95, 11, 47, 56, 69, 39, 17, 7, 83, 37, 70, 46, 48, 76, 66, 60, 91, 100, 80, 79, 54, 68
+  import time
+import random
+
+stime = time.time()
+
+numlist1 = [100, 65, 78, 45, 40, 76, 95, 42, 39, 51, 82, 37, 43, 27, 59, 80, 96, 10, 93, 73, 86, 24, 70, 87, 77, 29, 30, 61, 2, 81, 91, 41, 62, 49, 66, 12, 38, 85, 88, 71, 53, 14, 6, 97, 83, 28, 46, 15, 54, 60, 92, 19, 84, 3, 52, 98, 90, 18, 74, 13, 9, 56, 68, 48, 55, 47, 63, 44, 5, 32, 34, 20, 7, 16, 21, 1, 23, 22, 69, 72, 75, 79, 35, 36, 57, 17, 50, 4, 26, 33, 99, 64, 31, 58, 8, 67, 89, 25, 11, 94]
+
+
+
+def quicksort(numlist):
+  
+  bigger = []
+  smaller = []
+  pivot = []
+  
+  randomnumber = random.choice(numlist)
+
+  pivot.append(randomnumber)
+
+
+  for i in numlist:
+    if i > randomnumber:
+      bigger.append(i)
+    elif i < randomnumber:
+      smaller.append(i)
+    else:
+      x = 0 
+  
+  if len(smaller) > 1:
+    smaller = quicksort(smaller)
+  
+  if len(bigger) > 1:
+    bigger = quicksort(bigger)
+
+  numlist = smaller + pivot + bigger
+  return(numlist)
+
+numlist1 = quicksort(numlist1)
+
+
+  
+etime = time.time()
+ttime = etime - stime
+
+print numlist1  
   </p>
   
     <p>    <b class="gold">SHOW ALL CONTENT, ITS A GAME, SPAM YOUR MOUSE.</b>      </p>  
